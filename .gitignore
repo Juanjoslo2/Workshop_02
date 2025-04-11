@@ -1,0 +1,14 @@
+.env
+venv/
+
+airflow*.*
+logs/
+airflow.db
+standalone_admin_password.txt
+webserver_config.py
+
+
+
+drive_config/
+
+__pycache__/
