@@ -16,6 +16,73 @@ This project implements an **ETL** (Extract, Transform, Load) pipeline using **A
 - **Load:**  
   Save the processed information into a database (for example, PostgreSQL) and export CSV files to external services (such as Google Drive) for further analysis.
 
+
+---
+
+## 📊 Dataset Information
+
+This project relies on two main datasets: **`spotify_dataset.csv`** and **`the_grammy_awards.csv`**, along with additional data retrieved from the **MusicBrainz API**. These resources are essential for analyzing music trends, comparing track features, and exploring the relationship between musical characteristics and award recognition at the Grammys.
+
+---
+
+### 🎧 Spotify Dataset (`spotify_dataset.csv`)
+
+This dataset includes a wide range of information about songs available on Spotify. Each row represents a single track with attributes covering both metadata and musical features.
+
+**Key columns:**
+
+- `Unnamed: 0`: Serves as a general index for the dataset.
+- `track_id`: Unique identifier for each track on Spotify.
+- `artists`: Name(s) of the artist(s) associated with the track.
+- `album_name`: Name of the album the track belongs to.
+- `track_name`: Title of the track.
+- `popularity`: Score from 0 to 100 representing how popular the track is on Spotify.
+- `duration_ms`: Duration of the track in milliseconds.
+- `danceability`: How suitable a track is for dancing; higher values indicate greater danceability.
+- `energy`: A measure of intensity and activity in the track.
+- `key`: The musical key of the track (0 = C, 1 = C#, etc.).
+- `loudness`: Overall loudness of the track in decibels.
+- `mode`: Whether the track is in a major (1) or minor (0) mode.
+- `explicit`: Indicates if the track contains explicit content (True/False).
+- `tempo`: The speed of the track measured in beats per minute (BPM).
+- `valence`: A measure of musical positiveness or happiness.
+- `time_signature`: Estimated overall time signature of a track.
+- `track_genre`: The genre associated with the track.
+
+---
+
+### 🏆 Grammy Awards Dataset (`the_grammy_awards.csv`)
+
+This dataset contains information about Grammy Award nominations and winners. Each row represents a nomination in a specific award category.
+
+**Key columns:**
+
+- `year`: The year the Grammy Awards were held.
+- `title`: Title of the Grammy event.
+- `published_at`: Date when the Grammy event details were published.
+- `category`: Award category (e.g., Record Of The Year, Best Pop Solo Performance).
+- `nominee`: The nominated song or album.
+- `artist`: Artist(s) associated with the nominated work.
+- `workers`: Contributors (such as producers or engineers) involved in the work.
+- `img`: URL linking to an image of the Grammy event or nominee.
+- `winner`: Boolean indicating whether the nominee won the award (True/False).
+
+---
+
+### 🎼 MusicBrainz API
+
+This project also integrates artist metadata retrieved from the MusicBrainz API to enhance the dataset. The extracted information includes:
+
+**Key columns:**
+
+- `artist`: The name of the artist.
+- `country`: The country of origin.
+- `type`: The type of artist (e.g., Person, Group).
+- `disambiguation`: Additional text to distinguish artists with similar names.
+- `life_begin`: The beginning date of the artist’s lifespan.
+- `life_end`: The end date of the artist’s lifespan.
+
+
 ## Main Technologies and Tools
 
 - **Language:** Python (Python 3.10 or higher is recommended)  
@@ -45,7 +112,6 @@ This project implements an **ETL** (Extract, Transform, Load) pipeline using **A
 - **API:** MusicBrainz  
   [MusicBrainz API Documentation](https://musicbrainz.org/doc/MusicBrainz_API)
 
----
 
 ## Project Structure
 
